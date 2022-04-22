@@ -4,13 +4,13 @@ def approval_program():
   
   on_create = Seq([
     App.globalPut(Bytes("contract_creator"), Txn.sender()),
-    App.globalPut(Bytes("deposit"), Int(0)),
     Return(Int(1))
   ])
 
   on_asset_transfer = Seq([
     Assert(Global.group_size() == Int(1)),
     Assert(Txn.application_args.length() == Int(3)), 
+    
     InnerTxnBuilder.Begin(),
     InnerTxnBuilder.SetFields({
       TxnField.type_enum: TxnType.AssetTransfer,
@@ -19,9 +19,9 @@ def approval_program():
       TxnField.xfer_asset: Txn.assets[0],
       TxnField.fee : Int(0),
       TxnField.rekey_to: Txn.sender()
-  }),
-  InnerTxn.Submit(),
-  ])
+    }),
+    InnerTxn.Submit(),
+    ])
   
   program = Cond(
         [Txn.application_id() == Int(0), on_create],
