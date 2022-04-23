@@ -23,8 +23,8 @@ View in [algoexplorer](https://testnet.algoexplorer.io/application/85471002)
 
 <img width="671" alt="Screenshot 2022-04-23 at 02 25 00" src="https://user-images.githubusercontent.com/23031920/164859480-b2f07bb0-8c72-4249-8c9b-54d2c939c49e.png">
 
-LICENSE
-Distributed under the MIT License. See for more information LICENSE
+# LICENSE
+Distributed under the MIT License. See for more information [LICENSE](https://github.com/gconnect/single-deposit/blob/master/LICENSE)
 
-Disclaimer
+# Disclaimer
 This project is not audited and should not be used in a production environment.
