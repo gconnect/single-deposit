@@ -30,7 +30,7 @@ def approval_program():
         )
   
   program = Cond(
-        [Txn.application_id() == Int(0), on_create],
+        [Txn.application_id() == Int(0), Approve()],
         [Txn.on_completion() == OnComplete.NoOp, call],
         [
             Or(

@@ -60,8 +60,5 @@ itxn_submit
 int 1
 return
 main_l8:
-byte "contract_creator"
-txn Sender
-app_global_put
 int 1
 return
